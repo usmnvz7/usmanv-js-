@@ -72,18 +72,24 @@ switch(time ){
                                 alert("Такого часа не существует")
 }
 
-var x = +prompt("Введите  первое число:");
-var y = +prompt("Введите  второе число");
-var z = +prompt("Введите  третье число");
-var result = (x+y+z)/3
-alert("Среднее число: " + result);
+var num1 = +prompt("Введите 1-число: например 3")
+var num2 = +prompt("Введите 2-число: например 2")
+var num3 = +prompt("Введите 3-число: например 1")
 
- if(x > y && !isNaN(x) && !isNaN(y) && !isNaN(z) && x < z){
-    console.log("Первое число больше второго и третьего")
- }else if ( y < x && !isNaN(x) && !isNaN(y) && !isNaN(z) && y < z){
-    console.log("Второе число больше первого и третьего")
- } else if ( z < x && !isNaN(x) && !isNaN(y) && !isNaN(z) && z < y){
-    console.log("Третье число больше первого и второго")}
-   else{
-    alert( " Что-то пошло не так")
-   }
+if(num2 < num1 && num1 < num3){          //num2 < num1 < num3
+    alert("Это " + num1)
+} else if (num1 < num2  && num2 < num3){ //num1 < num2 < num3
+    alert("Это " + num2)
+}else if(num1 < num3 && num3 < num2) { //num1 < num3 < num2
+    alert("Это " + num3)
+}else if(num3 < num1 && num1 < num2){ //num2 > num1 > num3
+    alert("Это " + num1)
+}else if(num3 < num2 && num2 < num1){ //num1 > num2 > num3
+    alert("Это " + num2)
+}else if(num2 < num3 && num3 < num1){ //num1 > num3 > num2
+    alert("Это " + num3)
+}else if(num1 == num2 || num1 == num3 || num2 == num3){
+    alert("Нужно ввести разные числа..!")
+}else {
+    alert("ЧТо-то пошло не так..")
+}
